@@ -41,6 +41,20 @@
 ||displayCard|플레이어 카드를 순서에 맞게 반환|
 ||displayField|필드 카드를 반환|
 
+#### 테스트
+  User부분의 간단한 입출력 밖에 테스트하지 못하였음
+
+|Testcase|UUT|기능|Results|
+|------|---|---|---|
+|UT-1-1|self.player1|실행 시 제대로 생성 되는지 테스트|pass|
+|UT-1-2|self.player2|실행 시 제대로 생성 되는지 테스트|pass|
+|UT-1-3|self.player1|실행 시 제대로 생성 되는지 테스트|pass|
+|UT-1-4|self.field|실행 시 제대로 생성 되는지 테스트|pass|
+|UT-2-1|playerChoice()|실행 시 제대로 생성 되는지 테스트|pass|
+|UT-2-1|flop()|실행 시 리스트 안에 값이 저장되는지, 상황에 맞게 작동하는지|pass|
+|UT-2-1|turn()|실실행 시 리스트 안에 값이 저장되는지, 상황에 맞게 작동하는지|pass|
+|UT-2-1|river()|실행 시 리스트 안에 값이 저장되는지, 상황에 맞게 작동하는지|pass|
+
 
 
 동작영상 https://youtu.be/CYsnLkad1t8
