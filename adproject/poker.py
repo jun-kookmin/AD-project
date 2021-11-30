@@ -1,4 +1,3 @@
-#-*- coding: utf-8 -*-
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget
@@ -118,6 +117,24 @@ class Poker(QWidget):
             self.currPlayerTurn.setText("now player2's turn")
             self.user.playerTurn += 1
             self.checkStack += 1
+            
+            if self.checkStack == 2 and self.level == 0:
+                self.user.flop()
+                self.texasHoldemField.setText(self.user.displayField())
+                self.callStack = 0
+                self.checkStack = 0
+                self.level += 1
+                
+            elif self.checkStack == 2 and self.level == 1:
+                self.user.turn()
+                self.texasHoldemField.setText(self.user.displayField())
+                self.callStack = 0
+                self.checkStack = 0
+                self.level += 1
+                
+            elif self.checkStack == 2 and self.level == 2:
+                self.user.river()
+                self.texasHoldemField.setText(self.user.displayField())
     
         else:
             self.currPlayerMoney.setText(str(self.user.player2Chip))
@@ -156,6 +173,24 @@ class Poker(QWidget):
             self.currPlayerTurn.setText("now player2's turn")
             self.user.playerTurn += 1
             self.callStack += 1
+            
+            if self.callStack == 2 and self.level == 0:
+                self.user.flop()
+                self.texasHoldemField.setText(self.user.displayField())
+                self.callStack = 0
+                self.checkStack = 0
+                self.level += 1
+            
+            elif self.callStack == 2 and self.level == 1:
+                self.user.turn()
+                self.texasHoldemField.setText(self.user.displayField())
+                self.callStack = 0
+                self.checkStack = 0
+                self.level += 1
+            
+            elif self.callStack == 2 and self.level == 2:
+                self.user.river()
+                self.texasHoldemField.setText(self.user.displayField())
             
         else:
             self.currPlayerMoney.setText(str(self.user.player2Chip))
